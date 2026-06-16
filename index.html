@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mohammad Talha — O2C & Finance BA</title>
+<meta name="description" content="Lean & Digital Transformation Analyst | Finance Business Analyst | O2C, SAP, Power BI, SQL" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --paper:#F7F8FA;
+    --ink:#1A2E4A;
+    --copper:#C77B3E;
+    --steel:#5C7A99;
+    --border:#E8EBEF;
+    --max:1080px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Spectral',serif; color:var(--navy); letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:var(--copper); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  /* skip link */
+  .skip-link{position:absolute; left:-9999px; top:0; background:var(--navy); color:#fff; padding:8px 16px; z-index:100;}
+  .skip-link:focus{left:8px; top:8px;}
+
+  /* HEADER */
+  header.top{
+    background:var(--navy);
+    color:#fff;
+    padding:48px 0 36px;
+  }
+  header.top .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:#9FB3CC;
+    margin-bottom:10px;
+  }
+  header.top h1{
+    color:#fff;
+    font-size:clamp(2rem, 5vw, 3.2rem);
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  header.top .role{
+    color:#C9D6E6;
+    font-size:1.05rem;
+    font-weight:400;
+    margin-bottom:22px;
+    max-width:640px;
+  }
+  .contact-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 14px;
+  }
+  .contact-bar a{
+    color:#E8EFFA;
+    font-size:0.88rem;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 12px;
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:6px;
+    transition:background 0.15s, border-color 0.15s;
+  }
+  .contact-bar a:hover{
+    background:rgba(255,255,255,0.08);
+    border-color:rgba(255,255,255,0.4);
+    text-decoration:none;
+  }
+  .contact-bar i{color:var(--copper); width:14px; text-align:center;}
+
+  /* METRICS STRIP — signature element */
+  .metrics{
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    border-top:3px solid var(--copper);
+  }
+  .metrics-inner{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:0;
+  }
+  .metric{
+    padding:22px 20px;
+    border-right:1px solid var(--border);
+    text-align:left;
+  }
+  .metric:last-child{border-right:none;}
+  .metric .label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--steel);
+    margin-bottom:6px;
+  }
+  .metric .value{
+    font-family:'JetBrains Mono',monospace;
+    font-size:clamp(1.3rem, 2.6vw, 1.9rem);
+    font-weight:700;
+    color:var(--navy);
+  }
+  .metric .value span{color:var(--copper);}
+
+  @media (max-width:760px){
+    .metrics-inner{grid-template-columns:repeat(2,1fr);}
+    .metric:nth-child(2){border-right:none;}
+    .metric{border-bottom:1px solid var(--border);}
+  }
+
+  /* SECTIONS */
+  main section{
+    padding:52px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:28px;
+  }
+  .section-head .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--copper);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:3px 8px;
+  }
+  .section-head h2{
+    font-size:1.55rem;
+    font-weight:600;
+  }
+  .lede{
+    color:var(--steel);
+    font-size:0.95rem;
+    max-width:680px;
+  }
+
+  /* SUMMARY */
+  .summary-text{
+    font-size:1.04rem;
+    max-width:760px;
+    color:var(--ink);
+  }
+  .summary-text strong{color:var(--navy);}
+
+  /* KEY STRENGTHS */
+  .strengths-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:18px;
+  }
+  .strength-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:20px;
+  }
+  .strength-card i{
+    color:var(--copper);
+    font-size:1.3rem;
+    margin-bottom:10px;
+    display:block;
+  }
+  .strength-card h3{
+    font-size:1.02rem;
+    font-weight:600;
+    margin-bottom:6px;
+    font-family:'Inter',sans-serif;
+    color:var(--navy);
+  }
+  .strength-card p{
+    font-size:0.88rem;
+    color:var(--steel);
+  }
+
+  /* EXPERIENCE — compact rows */
+  .exp-row{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:24px;
+    padding:22px 0;
+    border-top:1px solid var(--border);
+  }
+  .exp-row:first-of-type{border-top:none;}
+  .exp-meta .dates{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    color:var(--copper);
+    margin-bottom:4px;
+  }
+  .exp-meta .company{
+    font-size:0.85rem;
+    color:var(--steel);
+  }
+  .exp-body h3{
+    font-size:1.08rem;
+    font-weight:600;
+    margin-bottom:10px;
+    font-family:'Inter',sans-serif;
+    color:var(--navy);
+  }
+  .exp-body ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+  }
+  .exp-body ul li{
+    font-size:0.92rem;
+    color:var(--ink);
+    padding-left:16px;
+    position:relative;
+  }
+  .exp-body ul li::before{
+    content:"›";
+    position:absolute;
+    left:0;
+    color:var(--copper);
+    font-weight:700;
+  }
+  @media (max-width:680px){
+    .exp-row{grid-template-columns:1fr; gap:6px;}
+  }
+
+  /* PROJECT — featured */
+  .project-card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-left:4px solid var(--copper);
+    border-radius:8px;
+    padding:28px 28px 24px;
+  }
+  .project-card h3{
+    font-size:1.2rem;
+    margin-bottom:4px;
+  }
+  .project-card .project-meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;
+    color:var(--steel);
+    margin-bottom:16px;
+  }
+  .project-spec-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(160px,1fr));
+    gap:14px;
+    margin:18px 0;
+  }
+  .spec-item{
+    background:var(--paper);
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:12px 14px;
+  }
+  .spec-item .n{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:1.2rem;
+    color:var(--navy);
+  }
+  .spec-item .d{
+    font-size:0.78rem;
+    color:var(--steel);
+    margin-top:2px;
+  }
+  .project-card ul{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    margin-top:14px;
+  }
+  .project-card ul li{
+    font-size:0.92rem;
+    padding-left:16px;
+    position:relative;
+  }
+  .project-card ul li::before{
+    content:"›";
+    position:absolute;
+    left:0;
+    color:var(--copper);
+    font-weight:700;
+  }
+
+  /* SKILLS DASHBOARD */
+  .skills-dashboard{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+    gap:18px;
+  }
+  .skill-group{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:18px 20px;
+  }
+  .skill-group h3{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--copper);
+    margin-bottom:12px;
+    font-weight:700;
+  }
+  .skill-tags{display:flex; flex-wrap:wrap; gap:6px;}
+  .skill-tags span{
+    font-size:0.78rem;
+    background:var(--paper);
+    border:1px solid var(--border);
+    border-radius:4px;
+    padding:4px 9px;
+    color:var(--ink);
+  }
+
+  /* CERTIFICATIONS */
+  .cert-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:14px;
+  }
+  .cert-item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:14px 16px;
+  }
+  .cert-item i{color:var(--copper); font-size:1.1rem; margin-top:2px;}
+  .cert-item .name{font-weight:600; font-size:0.92rem; color:var(--navy);}
+  .cert-item .issuer{font-size:0.8rem; color:var(--steel);}
+
+  /* EDUCATION */
+  .edu-item{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:16px 0;
+    border-top:1px solid var(--border);
+  }
+  .edu-item:first-of-type{border-top:none;}
+  .edu-item .deg{font-weight:600; color:var(--navy);}
+  .edu-item .school{font-size:0.88rem; color:var(--steel);}
+  .edu-item .dates{font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:var(--copper);}
+
+  /* CAREER GOALS */
+  .goals-box{
+    background:var(--navy);
+    color:#E8EFFA;
+    border-radius:10px;
+    padding:32px;
+  }
+  .goals-box h2{color:#fff;}
+  .goals-box p{font-size:0.98rem; color:#C9D6E6; max-width:680px;}
+  .goals-box .targets{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:16px;
+  }
+  .goals-box .targets span{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:4px;
+    padding:5px 11px;
+    color:#fff;
+  }
+
+  /* FOOTER / CONTACT */
+  footer{
+    background:var(--navy);
+    color:#C9D6E6;
+    padding:40px 0 32px;
+  }
+  footer h2{color:#fff; font-size:1.3rem; margin-bottom:6px;}
+  footer .sub{font-size:0.9rem; color:#9FB3CC; margin-bottom:22px;}
+  .footer-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .footer-links a{
+    color:#E8EFFA;
+    font-size:0.88rem;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 16px;
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:6px;
+  }
+  .footer-links a:hover{
+    background:rgba(255,255,255,0.08);
+    text-decoration:none;
+  }
+  .footer-links i{color:var(--copper); width:14px; text-align:center;}
+  .footer-bottom{
+    margin-top:28px;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,0.12);
+    font-size:0.78rem;
+    color:#7E97B5;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--copper);
+    outline-offset:2px;
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">O2C · Finance BA · Digital Transformation</div>
+    <h1>Mohammad Talha</h1>
+    <p class="role">Lean &amp; Digital Transformation Analyst &amp; Finance Business Analyst — translating live Order-to-Cash operations into BRD/FRD documentation, SAP-driven reporting, and Power BI dashboards.</p>
+    <div class="contact-bar">
+      <a href="mailto:mohdtalha4727@gmail.com"><i class="fa-solid fa-envelope"></i>mohdtalha4727@gmail.com</a>
+      <a href="tel:+917017481525"><i class="fa-solid fa-phone"></i>+91-7017481525</a>
+      <a href="https://wa.me/917017481525" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+      <a href="https://linkedin.com/in/mohammad-talha-793889259" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+      <a href="https://mohdtalha19.github.io/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i>mohdtalha19.github.io</a>
+      <span style="color:#E8EFFA; font-size:0.88rem; display:inline-flex; align-items:center; gap:7px; padding:7px 12px; border:1px solid rgba(255,255,255,0.18); border-radius:6px;"><i class="fa-solid fa-location-dot" style="color:var(--copper); width:14px; text-align:center;"></i>New Delhi, India</span>
+    </div>
+  </div>
+</header>
+
+<!-- METRICS STRIP -->
+<section class="metrics" aria-label="Key performance metrics">
+  <div class="wrap">
+    <div class="metrics-inner">
+      <div class="metric">
+        <div class="label">Portfolio Managed</div>
+        <div class="value"><span>Multi-Million $</span></div>
+      </div>
+      <div class="metric">
+        <div class="label">Past Due % Improvement</div>
+        <div class="value"><span>50%+</span></div>
+      </div>
+      <div class="metric">
+        <div class="label">DSO Target</div>
+        <div class="value">NET <span>30</span></div>
+      </div>
+      <div class="metric">
+        <div class="label">FRD Specifications Authored</div>
+        <div class="value"><span>20+</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main id="main">
+
+  <!-- SUMMARY -->
+  <section id="summary">
+    <div class="wrap">
+      <div class="section-head"><span class="num">01</span><h2>Professional Summary</h2></div>
+      <p class="summary-text">
+        Results-driven O2C Analyst and Finance BA candidate with <strong>3+ years</strong> managing <strong>large B2B receivables portfolios</strong> at Genpact. Reduced Past Due percentage <strong>by more than half year-over-year</strong> through disciplined collections strategy and SAP-driven root cause analysis. Independently authored full BRD/FRD documentation for a collections automation concept (20+ functional specifications, SAP ERP integration concepts, Power BI AR Aging Dashboard), built Excel/Power BI dashboards for finance leadership, and is pursuing Lean &amp; Six Sigma (Intermediate) certification via Genpact's BITS/Genome platform. Targeting <strong>Lean &amp; Digital Transformation Analyst</strong> and <strong>Finance BA</strong> roles — bridging O2C domain knowledge with structured requirements, data-driven reporting, and SDLC-aligned documentation.
+      </p>
+    </div>
+  </section>
+
+  <!-- KEY STRENGTHS / WHY HIRE -->
+  <section id="strengths">
+    <div class="wrap">
+      <div class="section-head"><span class="num">02</span><h2>Key Strengths</h2></div>
+      <p class="lede" style="margin-bottom:24px;">What I bring to a transformation or BA role on day one.</p>
+      <div class="strengths-grid">
+        <div class="strength-card">
+          <i class="fa-solid fa-file-circle-check"></i>
+          <h3>Live BA Output, Not Theory</h3>
+          <p>Authored a full BRD/FRD (16 requirements, 20+ functional specs) drawing on real O2C operational experience — not a classroom exercise.</p>
+        </div>
+        <div class="strength-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Numbers-First Track Record</h3>
+          <p>Reduced Past Due percentage by more than half year-over-year on a large multi-million-dollar portfolio through structured dunning and root cause analysis.</p>
+        </div>
+        <div class="strength-card">
+          <i class="fa-solid fa-diagram-project"></i>
+          <h3>SAP + Power BI Fluency</h3>
+          <p>Regular SAP ERP use for invoices, POs, and reconciliation; builds aging and PD Walk dashboards in Excel and Power BI for leadership.</p>
+        </div>
+        <div class="strength-card">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+          <h3>Root Cause to Resolution</h3>
+          <p>Diagnoses billing errors, shipping discrepancies, and commercial term conflicts, escalating disputes promptly.</p>
+        </div>
+        <div class="strength-card">
+          <i class="fa-solid fa-layer-group"></i>
+          <h3>SDLC-Aligned Documentation</h3>
+          <p>RBAC, UAT criteria, user stories, and NFRs (performance, security, scalability, audit) written to enterprise standards.</p>
+        </div>
+        <div class="strength-card">
+          <i class="fa-solid fa-arrows-spin"></i>
+          <h3>Lean Process Mindset</h3>
+          <p>Pursuing Lean &amp; Six Sigma (Intermediate); applies process-improvement thinking to collections and reporting workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head"><span class="num">03</span><h2>Work Experience</h2></div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <div class="dates">Jan 2025 – Present</div>
+          <div class="company">Genpact, Gurugram</div>
+        </div>
+        <div class="exp-body">
+          <h3>Management Trainee — O2C / Accounts Receivable Analyst</h3>
+          <ul>
+            <li>Managed a large NAM B2B receivables portfolio across 100+ accounts; monitored PD/CD invoices daily, maintaining DSO within NET 30.</li>
+            <li>Reduced Past Due % by more than half year-over-year via proactive outreach, structured dunning, and disciplined follow-up — delivering measurable CEI improvement.</li>
+            <li>Performed in-depth PD root cause analysis (billing errors, shipping discrepancies, commercial term conflicts); escalated disputes promptly.</li>
+            <li>Built PD Walk &amp; Aging Report dashboards in Excel (VLOOKUP, Pivot Tables) for weekly visibility into overdue invoices and recovery timelines.</li>
+            <li>Leveraged SAP ERP to retrieve invoices, POs, and POD documents for accurate cash application and account reconciliation.</li>
+            <li>Authored BRD &amp; FRD for an O2C AR Collections Automation concept — 16 business requirements and 20+ functional specifications.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <div class="dates">Apr 2024 – Jan 2025</div>
+          <div class="company">Teleperformance (TP) India</div>
+        </div>
+        <div class="exp-body">
+          <h3>Operations Executive — Reporting &amp; Analysis</h3>
+          <ul>
+            <li>Analysed high-volume customer interaction data and operational KPIs; generated aging and performance reports for senior management.</li>
+            <li>Maintained accurate records across CRM systems, ensuring data integrity, streamlined reporting workflows, and audit-ready documentation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <div class="dates">Feb 2023 – Mar 2024</div>
+          <div class="company">iQor India, Noida</div>
+        </div>
+        <div class="exp-body">
+          <h3>Operations Executive — Collections &amp; Reporting</h3>
+          <ul>
+            <li>Managed a delinquent accounts portfolio, consistently meeting or exceeding monthly collection recovery targets while ensuring full regulatory compliance.</li>
+            <li>Analysed aging report data to identify delinquency trends and high-risk accounts; implemented process improvements that increased collection recovery rates.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <div class="dates">Aug 2022 – Jan 2023</div>
+          <div class="company">The LCF Group, Noida</div>
+        </div>
+        <div class="exp-body">
+          <h3>Accounts Receivable Analyst</h3>
+          <ul>
+            <li>Managed end-to-end debt recovery and cash application through outbound collections and structured repayment negotiations.</li>
+            <li>Cross-functional coordination to resolve billing disputes and reduce resolution cycle time.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECT -->
+  <section id="project">
+    <div class="wrap">
+      <div class="section-head"><span class="num">04</span><h2>Featured Project</h2></div>
+      <div class="project-card">
+        <h3>BRD &amp; FRD — O2C AR Collections Automation Concept</h3>
+        <div class="project-meta">SELF-INITIATED · MAY 2026 · Informed by O2C operations experience</div>
+        <p>
+          Independently authored an illustrative Business Requirements Document and Functional Requirements Document for an end-to-end AR Collections Automation concept — translating frontline collections experience into enterprise-grade SDLC documentation as a sample work product.
+        </p>
+        <div class="project-spec-grid">
+          <div class="spec-item"><div class="n">16</div><div class="d">Business requirements (BRD)</div></div>
+          <div class="spec-item"><div class="n">20+</div><div class="d">Functional specifications (FRD)</div></div>
+          <div class="spec-item"><div class="n">Significant</div><div class="d">Target manual-effort reduction</div></div>
+          <div class="spec-item"><div class="n">Lower PD</div><div class="d">Sustained improvement target</div></div>
+        </div>
+        <ul>
+          <li>BRD covered collections automation, Power BI dashboard reporting, and dispute escalation workflows.</li>
+          <li>FRD translated requirements into testable specs: ERP-based data extraction, tiered dunning automation concepts, escalation routing logic, and Power BI AR Aging Dashboard refresh.</li>
+          <li>Documented stakeholder register, RBAC user roles, UAT criteria, sample user stories, and NFRs across performance, security, scalability, and audit compliance.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS DASHBOARD -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head"><span class="num">05</span><h2>Skills Dashboard</h2></div>
+      <div class="skills-dashboard">
+        <div class="skill-group">
+          <h3>AR &amp; O2C</h3>
+          <div class="skill-tags">
+            <span>Accounts Receivable</span><span>O2C</span><span>Invoice-to-Cash</span><span>Cash Application</span><span>Aging Report Analysis</span><span>DSO Optimisation</span><span>CEI</span><span>PD Root Cause Analysis</span><span>Dispute Resolution</span><span>Account Reconciliation</span><span>Dunning &amp; Collections</span><span>KPI Tracking</span><span>SLA Compliance</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Data &amp; BI</h3>
+          <div class="skill-tags">
+            <span>Excel (VLOOKUP, Pivot Tables)</span><span>Power BI</span><span>Tableau</span><span>Dashboard Creation</span><span>Data Visualisation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>ERP &amp; Tools</h3>
+          <div class="skill-tags">
+            <span>SAP ERP</span><span>CRM Systems</span><span>Collections Software</span><span>Jira (in progress)</span><span>Confluence (in progress)</span><span>MS Office Suite</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Database</h3>
+          <div class="skill-tags">
+            <span>SQL (HackerRank Certified)</span><span>Data Extraction</span><span>Data Cleaning</span><span>Data Transformation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>BA Skills</h3>
+          <div class="skill-tags">
+            <span>BRD/FRD Authoring</span><span>Requirements Elicitation</span><span>User Story Writing</span><span>UAT Planning</span><span>Process Mapping</span><span>Stakeholder Communication</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Soft Skills</h3>
+          <div class="skill-tags">
+            <span>Cross-functional Collaboration</span><span>Negotiation</span><span>Process Improvement</span><span>Root Cause Analysis</span><span>Lean Thinking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs">
+    <div class="wrap">
+      <div class="section-head"><span class="num">06</span><h2>Certifications</h2></div>
+      <div class="cert-list">
+        <div class="cert-item">
+          <i class="fa-solid fa-certificate"></i>
+          <div>
+            <div class="name">Lean &amp; Six Sigma — Intermediate</div>
+            <div class="issuer">Genpact BITS/Genome · 2026</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <i class="fa-solid fa-certificate"></i>
+          <div>
+            <div class="name">Data Analytics Essentials</div>
+            <div class="issuer">Cisco Networking Academy · 2024</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <i class="fa-solid fa-certificate"></i>
+          <div>
+            <div class="name">SQL (Basic)</div>
+            <div class="issuer">HackerRank · 2024</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <i class="fa-solid fa-certificate"></i>
+          <div>
+            <div class="name">Jira — Get Started Quickly</div>
+            <div class="issuer">Atlassian · June 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head"><span class="num">07</span><h2>Education</h2></div>
+      <div class="edu-item">
+        <div>
+          <div class="deg">MBA — Business Analytics</div>
+          <div class="school">Uttaranchal University</div>
+        </div>
+        <div class="dates">Jul 2023 – Jul 2025</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="deg">B.Com — Business Administration &amp; Management</div>
+          <div class="school">Regional College of Professional Studies &amp; Research</div>
+        </div>
+        <div class="dates">Mar 2020 – Mar 2023</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREER GOALS -->
+  <section id="goals">
+    <div class="wrap">
+      <div class="goals-box">
+        <h2>Career Goals</h2>
+        <p>Targeting <strong>Lean &amp; Digital Transformation Analyst</strong> and <strong>Finance Business Analyst</strong> roles where O2C domain knowledge can be applied at a systems level — bridging operational reality with structured requirements, data-driven reporting, and SDLC-aligned documentation.</p>
+        <div class="targets">
+          <span>Lean &amp; Digital Transformation Analyst</span>
+          <span>Finance Business Analyst</span>
+          <span>O2C Process Improvement</span>
+          <span>BA / Requirements Roles</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p class="sub">Open to Lean &amp; Digital Transformation Analyst and Finance BA roles, internships included.</p>
+    <div class="footer-links">
+      <a href="mailto:mohdtalha4727@gmail.com"><i class="fa-solid fa-envelope"></i>mohdtalha4727@gmail.com</a>
+      <a href="tel:+917017481525"><i class="fa-solid fa-phone"></i>+91-7017481525</a>
+      <a href="https://wa.me/917017481525" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+      <a href="https://linkedin.com/in/mohammad-talha-793889259" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+      <a href="https://mohdtalha19.github.io/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i>Portfolio</a>
+      <span style="color:#E8EFFA; font-size:0.88rem; display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border:1px solid rgba(255,255,255,0.18); border-radius:6px;"><i class="fa-solid fa-location-dot" style="color:var(--copper); width:14px; text-align:center;"></i>New Delhi, India</span>
+    </div>
+    <div class="footer-bottom">Mohammad Talha — O2C &amp; Finance BA Portfolio</div>
+  </div>
+</footer>
+
+</body>
+</html>
